@@ -2,6 +2,7 @@
     --ff-Fraunces: 'Fraunces', serif;
     --ff-Montserrat: 'Montserrat', sans-serif;
     --color-primary-dark-cyan: hsl(158, 36%, 37%);
+    --color-primary-dark-cyan-darker: hsl(158, 36%, 17%);
     --color-primary-cream: hsl(30, 38%, 92%);
     --color-neutral-vary-dark-blue : hsl(212, 21%, 14%);
     --color-neutral-dark-grayish-blue: hsl(228, 12%, 48%);
@@ -26,6 +27,7 @@
     background-color: var(--color-neutral-white);
     border-radius: 0.7rem;
     overflow: hidden;
+    max-width: 600px;
 }
 
 html,
@@ -47,6 +49,13 @@ body{
 
 }
 
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 img,
 picture{
     display: block;
@@ -63,9 +72,17 @@ h6{
     overflow-wrap: break-word;
 }
 
-.picture{
+h1,
+h2,
+h3{
+    line-height: 1.1;
 }
 
+@media(min-width:600px){
+    .main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
 .content{
     padding: 1.3rem;
     display: grid;
@@ -82,9 +99,50 @@ h6{
 .head{
     text-transform: uppercase;
     letter-spacing: 4px;
+    font-weight: var(--fw-regular);
 }
 
 .product_name{
     font-family: var(--ff-Fraunces);
     color: var(--color-neutral-vary-dark-blue);
+    font-size: 1.825rem;
+}
+.desc{
+    font-size: 0.9rem;
+    font-weight: var(--fw-regular);
+}
+
+.big_price{
+    font-size: 2rem;
+    font-family: var(--ff-Fraunces);
+    font-weight: var(--fw-bold);
+    color: var(--color-primary-dark-cyan);
+}
+
+.cart_button{
+    cursor: pointer;
+    padding: .7rem 1.7rem;
+    text-decoration: none;
+    display: inline-flex;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: var(--color-primary-dark-cyan);
+    color: var(--color-neutral-white);
+    font-weight: var(--fw-bold);
+    font-size: 0.825rem;
+    border-radius: 0.5rem;
+}
+
+button:focus,
+button:hover{
+    background-color: var(--color-primary-dark-cyan-darker);
+}
+
+.cart_button[data-icon="shopping-cart"]::before {
+    content: "";
+    background-image: url(../images/icon-cart.svg);
+    width: 15px;
+    height: 16px;
 }
