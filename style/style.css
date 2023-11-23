@@ -30,6 +30,12 @@
     max-width: 600px;
 }
 
+@media(min-width:600px){
+    .main{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 html,
 body{
     height: 100%;
@@ -78,11 +84,6 @@ h3{
     line-height: 1.1;
 }
 
-@media(min-width:600px){
-    .main{
-        grid-template-columns: 1fr 1fr;
-    }
-}
 .content{
     padding: 1.3rem;
     display: grid;
@@ -118,7 +119,7 @@ h3{
     font-weight: var(--fw-bold);
     color: var(--color-primary-dark-cyan);
 }
-
+/* Button */
 .cart_button{
     cursor: pointer;
     padding: .7rem 1.7rem;
